@@ -8,7 +8,7 @@ class Model:
         self.vectorizer = TfidfVectorizer(stop_words='english', max_features=1000)
         self.ingredients_matrix = self.vectorizer.fit_transform(self.df["Ingredients"]).toarray()
         
-    def get_recommendation(self, user_input) -> None:
+    def get_recommendation(self, user_input):
         user_input_vector = self.vectorizer.transform([user_input])
         # Calculate cosine similarity
         cosine_similarities = cosine_similarity(user_input_vector, self.ingredients_matrix)

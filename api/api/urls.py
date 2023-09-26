@@ -21,4 +21,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('predict/', views.predict_view, name='predict'),
+    path('recommend/', views.recommend_view, name='recommend')
 ]
